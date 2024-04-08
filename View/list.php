@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista</title>
+    <link rel="stylesheet" href="Resources/Listyle.css">
+    <script src="https://kit.fontawesome.com/cb0dc3f2f3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="table-container">
@@ -20,7 +22,22 @@
                     <th>Eliminar</th>
                 </tr>
 
-                <?php foreach($this->Pizza->): ?>
+                <?php foreach($this->Pizota->listar() as $k): ?>
+                    <tr>
+                        <td><?php echo $k->nombre; ?></td>
+                        <td><?php echo $k->Ing_1; ?></td>
+                        <td><?php echo $k->Ing_2; ?></td>
+                        <td><?php echo $k->Ing_3; ?></td>
+                        <td><?php echo $k->Ing_4; ?></td>
+                        <td><?php echo $k->Precio; ?></td>
+                        <td>
+                          <a href="?resp=actPizza&nombre=<?php echo $k->nombre; ?>" class="Actualizarbtn"><i class="fa-solid fa-upload"></i>Actualizar</a>
+                        </td>
+                        <td>
+                          <a href="?resp=dPizza&nombre=<?php echo $k->nombre; ?>" class="Eliminarbtn"><i class="fa-solid fa-circle-xmark"></i>Eliminar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>    
             </thead>
         </table>
     </div>

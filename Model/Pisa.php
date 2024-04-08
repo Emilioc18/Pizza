@@ -27,21 +27,44 @@ class pizzita{
         }
     }
 
+    public function listar(){
+    try{
+        $query = "SELECT z.nombre,z.Ing_1,z.Ing_2,z.Ing_3,z.Ing_4,z.Precio FROM pizzas z ORDER BY z.nombre";
+        $resultado = $this->CNX->prepare($query);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
+     } catch (Exception $e){
+        die ($e->getMessage());
+     }
+  }
+
+   public function cargarnombre($name){
+    try {
+        $query = "SELECT * from pizzas where nombre=?";
+        $resultado = $this->CNX->prepare($query);
+        $resultado->execute(array($name));
+        return $resultado->fetch(PDO::FETCH_OBJ);
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
+
+ }
+
     //actualizar para el registro a futuro
     public function actualizarDatos($data){
         try {
-            $query = "UPDATE cliente set usuario=?,correo=?,nombre=?,telefono=? WHERE id_cliente=?";
-            $this->CNX->prepare($query)->execute(array($data->Username,$data->Email,$data->Nombre,$data->Telefono,$data->Fouring,$data->Fouring));
+            $query = "UPDATE pizzas set Ing_1=?,Ing_2=?,Ing_3=?,Ing_4=?,Precio=? WHERE nombre=?";
+            $this->CNX->prepare($query)->execute(array($data->Oneing,$data->Twoing,$data->Threeing,$data->Fouring,$data->Price,$data->name));
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
     //funcion de eliminar a futuro
-    public function delete ($id){
+    public function delete ($name){
         try {
-            $query = "DELETE FROM cliente WHERE id_cliente=?";
+            $query = "DELETE FROM pizzas WHERE nombre=?";
             $resultado = $this->CNX->prepare($query);
-            $resultado->execute(array($id));
+            $resultado->execute(array($name));
         } catch (Exception $e) {
             die($e->getMessage());
         }

@@ -12,30 +12,30 @@
     <section>
         <div class="contenedor">
             <div class="formulario">
-                <form method="post" action="?resp=registrar">
+                <form method="post" action="?resp=Editpizza">
                     <h2>Registro de Pizza</h2>
                     <div class="input_contenedor">
-                        <input type="text" name="txtname" required>
+                        <input type="text" name="txtname" value="<?php echo $alm->nombre; ?>" required>
                         <label for="#">Nombre</label>
                     </div>
                     <div class="input_contenedor">
-                        <input type="text" name="Txtoneing" required>
+                        <input type="text" name="Txtoneing" value="<?php echo $alm->Ing_1; ?>" required>
                         <label for="#">Ingrediente-1</label>
                     </div>
                     <div class="input_contenedor">
-                        <input type="text" name="Txttwoing" required>
+                        <input type="text" name="Txttwoing" value="<?php echo $alm->Ing_2; ?>" required>
                         <label for="#">Ingrediente-2</label>
                     </div>
                     <div class="input_contenedor">
-                        <input type="text" name="Txtthreeing" required>
+                        <input type="text" name="Txtthreeing" value="<?php echo $alm->Ing_3; ?>" required>
                         <label for="#">Ingrediente-3</label>
                     </div>
                     <div class="input_contenedor">
-                        <input type="text" name="Txtfouring" required>
+                        <input type="text" name="Txtfouring" value="<?php echo $alm->Ing_4; ?>" required>
                         <label for="#">Ingrediente-4</label>
                     </div>
                     <div class="input_contenedor">
-                        <input type="text" name="Txtprice" required>
+                        <input type="text" name="Txtprice" value="<?php echo $alm->Precio; ?>" required>
                         <label for="#">Precio</label>
                     </div>
                     <div class="button-container">

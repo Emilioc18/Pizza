@@ -1,0 +1,90 @@
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url(pepe.jpeg);
+}
+
+.table-responsive{
+    margin-top: 40px;
+    padding: 10px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+}
+
+table thead tr th {
+    padding: 20px 15px;
+    font-size: 15px;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 5px;
+  }
+  
+  table thead tr td {
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 3px;
+  }
+
+  .Actualizarbtn{
+    width: auto;
+    text-align: center;
+    float: right;
+    background-color: greenyellow;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.9s;
+    margin-left: 5px; /* Adjust the distance between buttons */
+    position: relative;
+  }
+
+  .Actualizarbtn i{
+    padding: 5px;
+  }
+
+  .Actualizarbtn:hover{
+    scale: 0.95;
+  }
+
+  .Eliminarbtn{
+    width: auto;
+    text-align: center;
+    float: right;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.9s;
+    margin-left: 5px; /* Adjust the distance between buttons */
+    position: relative;
+  }
+
+  .Eliminarbtn i{
+    padding: 5px;
+  }
+
+  .Eliminarbtn:hover{
+    scale: 0.95;
+  }
